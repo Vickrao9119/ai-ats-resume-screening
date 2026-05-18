@@ -498,7 +498,7 @@ def main() -> None:
     )
     load_style()
 
-    st.markdown("<div class='brand-header'><div><span>AI Recruiter Hub</span></div><div class='contact-bar'><a href='mailto:ac570011@gmail.com'>ac570011@gmail.com</a> | <a href='tel:+919119652725'>+91 9119652725</a></div></div>", unsafe_allow_html=True)
+    st.markdown("<div class='brand-header'><div><span>AI Recruiter Hub</span></div><div class='contact-bar'><a href='mailto:support@ai-recruiter-hub.com'>support@ai-recruiter-hub.com</a> | <a href='tel:+1-800-555-0100'>+1 800 555 0100</a></div></div>", unsafe_allow_html=True)
 
     page = st.sidebar.radio(
         "Navigation",
