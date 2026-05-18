@@ -1,0 +1,283 @@
+body {
+  background: radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 32%),
+              radial-gradient(circle at bottom right, rgba(124,58,237,0.16), transparent 28%),
+              #0b1120;
+  color: #e2e8f0;
+}
+
+.stApp {
+  background: transparent;
+}
+
+main .block-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f8fafc;
+}
+
+.brand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 18px 26px;
+  margin-bottom: 1rem;
+  box-shadow: 0 24px 45px rgba(76, 78, 100, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+.brand-header span {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.contact-bar a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-bar a:hover {
+  color: #c7d2fe;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  background: rgba(15, 23, 42, 0.86);
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.10);
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+}
+
+.hero-card h1 {
+  font-size: 3rem;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  color: #eef2ff;
+}
+
+.hero-card p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions a {
+  color: #38bdf8;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-stats div {
+  padding: 1.25rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  color: #e2e8f0;
+}
+
+.hero-stats strong {
+  display: block;
+  font-size: 1.75rem;
+  color: #f8fafc;
+}
+
+.hero-stats span {
+  display: block;
+  margin-top: 0.5rem;
+  color: #94a3b8;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 1.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.28);
+  backdrop-filter: blur(18px);
+  margin-bottom: 1rem;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.45);
+}
+
+.card-top {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 58, 237, 0.18);
+  color: #a78bfa;
+  font-size: 1.15rem;
+}
+
+.card-title {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.card-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.card-delta {
+  color: #7dd3fc;
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-grid div {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.3rem;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.22);
+}
+
+.feature-grid strong {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.feature-grid p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.suggestion-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(124, 58, 237, 0.28);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.overview-grid div {
+  background: rgba(15, 23, 42, 0.86);
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.overview-grid p {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+.stButton>button {
+  background: linear-gradient(135deg, #7c3aed 0%, #38bdf8 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.18) !important;
+  border-radius: 14px !important;
+  padding: 0.95rem 1.2rem !important;
+}
+
+.stButton>button:hover {
+  transform: translateY(-1px);
+}
+
+.css-1offfwp {
+  color: #e2e8f0;
+}
+
+.stSidebar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.stSidebar .css-15zrgzn {
+  background: transparent !important;
+}
+
+/* Hide default Streamlit menu, footer, and built-in page navigation */
+#MainMenu,
+footer,
+[aria-label="Streamlit menu"],
+div[data-testid="stSidebarNav"] {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+/* Center app content and remove extra left gutter margin */
+main .block-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Ensure the sidebar stays compact and professional */
+.css-1d391kg,
+.css-1offfwp,
+.css-1wrcrk3 {
+  color: #e2e8f0 !important;
+}
+
+.reportview-container .markdown-text-container p,
+.reportview-container .markdown-text-container li {
+  color: #cbd5e1 !important;
+}
+
+@media (max-width: 1100px) {
+  .hero-card,
+  .feature-grid,
+  .overview-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,4 @@
+# Data module for sample datasets
+from sample_data import SAMPLE_RESUMES, SAMPLE_JOB_DESCRIPTION, REQUIRED_SKILLS
+
+__all__ = ['SAMPLE_RESUMES', 'SAMPLE_JOB_DESCRIPTION', 'REQUIRED_SKILLS']
