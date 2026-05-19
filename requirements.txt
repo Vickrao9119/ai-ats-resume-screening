@@ -4,7 +4,6 @@ streamlit-option-menu>=0.3.6
 
 # NLP & Text Processing
 nltk>=3.8.0
-spacy>=3.5.0
 textblob>=0.17.0
 
 # Data Processing & Analysis

@@ -370,7 +370,7 @@ def show_upload() -> None:
     st.header("Resume Upload & Screening")
     uploaded_file = st.file_uploader(
         "Upload Resume or File",
-        type=None,
+        type=["pdf", "docx"],
         accept_multiple_files=False,
         key="resume_file",
     )

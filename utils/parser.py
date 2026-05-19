@@ -8,7 +8,6 @@ import io
 from typing import Dict, List, Optional, Tuple
 import PyPDF2
 import docx
-import spacy
 from datetime import datetime
 
 
@@ -16,14 +15,8 @@ class ResumeParser:
     """Extract and parse resume information from PDF/DOCX files"""
 
     def __init__(self):
-        """Initialize parser with spacy NLP model"""
-        try:
-            self.nlp = spacy.load("en_core_web_sm")
-        except:
-            print("Installing spacy model...")
-            import subprocess
-            subprocess.check_call(["python", "-m", "spacy", "download", "en_core_web_sm"])
-            self.nlp = spacy.load("en_core_web_sm")
+        """Initialize parser without external model dependencies"""
+        pass
 
     @staticmethod
     def extract_text_from_pdf(file_buffer: io.BytesIO) -> str:
@@ -69,17 +62,20 @@ class ResumeParser:
         return None
 
     def extract_name(self, text: str) -> Optional[str]:
-        """Extract candidate name using NER"""
-        lines = text.split('\n')
-        for line in lines[:10]:  # Check first 10 lines
-            line = line.strip()
-            if len(line) > 0 and len(line.split()) <= 4 and not any(char.isdigit() for char in line):
-                # Check if it looks like a name
-                doc = self.nlp(line)
-                for ent in doc.ents:
-                    if ent.label_ == "PERSON":
-                        return ent.text
-        return lines[0].strip() if lines else None
+        """Extract candidate name using simple header heuristics."""
+        lines = [line.strip() for line in text.splitlines() if line.strip()]
+        if not lines:
+            return None
+
+        for line in lines[:10]:
+            lower = line.lower()
+            if lower in ("resume", "curriculum vitae", "cv", "professional summary"):
+                continue
+            if 2 <= len(line.split()) <= 4 and not any(char.isdigit() for char in line):
+                if all(word[0].isupper() for word in line.split() if word):
+                    return line
+
+        return lines[0]
 
     def extract_education(self, text: str) -> List[Dict]:
         """Extract education information"""
