@@ -368,7 +368,12 @@ def show_home() -> None:
 
 def show_upload() -> None:
     st.header("Resume Upload & Screening")
-    uploaded_file = st.file_uploader("Upload candidate resume", type=["pdf", "docx", "txt"])
+    uploaded_file = st.file_uploader(
+        "Upload Resume or File",
+        type=None,
+        accept_multiple_files=False,
+        key="resume_file",
+    )
     job_description = st.text_area("Paste job description (optional)", height=140)
     analyze_button = st.button("Run ATS screening")
     st.markdown("---")
