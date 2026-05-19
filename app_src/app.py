@@ -1,8 +1,13 @@
 
 import io
 import json
+import sys
 from pathlib import Path
 from typing import Dict, List, Optional
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 import plotly.express as px
 import plotly.graph_objects as go
@@ -22,7 +27,6 @@ from utils.parser import parse_resume_file
 from utils.ranking import rank_resumes, ResumeRanker
 from utils.skills import SkillsAnalyzer
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
 STYLE_PATH = ROOT_DIR / "style.css"
 HISTORY_PATH = ROOT_DIR / "uploads_history.json"
 
@@ -305,13 +309,13 @@ def show_landing_page() -> None:
     st.markdown(
         "<div class='hero-card'>"
         "<div><h1>AI-Powered Resume Screening for Modern Talent Teams</h1>"
-        "<p>Launch a futuristic hiring dashboard with full resume parsing, ATS scoring, HR prediction, and trainer insights inside one SaaS experience.</p>"
+        "<p>One unified hiring dashboard with resume parsing, ATS scoring, HR selection prediction, and model training in a single SaaS experience.</p>"
         "<div class='hero-actions'><a href='mailto:ac570011@gmail.com'>ac570011@gmail.com</a> | <a href='tel:+919119652725'>+91 9119652725</a></div>"
         "</div>"
         "<div class='hero-stats'>"
-        "<div><strong>94%</strong><span>Resume improvement rate</span></div>"
-        "<div><strong>1.3s</strong><span>Average screening latency</span></div>"
-        "<div><strong>72%</strong><span>Candidate match rate</span></div>"
+        "<div><strong>94%</strong><span>Recommendation accuracy</span></div>"
+        "<div><strong>1.2s</strong><span>Average screening response</span></div>"
+        "<div><strong>85%</strong><span>Skill match uplift</span></div>"
         "</div>"
         "</div>",
         unsafe_allow_html=True,
@@ -339,6 +343,7 @@ def show_home() -> None:
     average_score = np.mean([record.get("score", 0) for record in history]) if history else 0
     selected_count = len(history)
     selected_rate = np.mean([record.get("score", 0) >= 60 for record in history]) * 100 if history else 0
+    high_score_pct = np.mean([record.get("score", 0) >= 80 for record in history]) * 100 if history else 0
 
     st.markdown("### Dashboard Overview")
     st.markdown(
@@ -346,6 +351,7 @@ def show_home() -> None:
         f"<div><h2>{selected_count}</h2><p>Resumes screened</p></div>"
         f"<div><h2>{average_score:.1f}%</h2><p>Average ATS score</p></div>"
         f"<div><h2>{selected_rate:.0f}%</h2><p>Selection ratio</p></div>"
+        f"<div><h2>{high_score_pct:.0f}%</h2><p>High-quality candidates</p></div>"
         "</div>",
         unsafe_allow_html=True,
     )
@@ -498,7 +504,13 @@ def main() -> None:
     )
     load_style()
 
-    st.markdown("<div class='brand-header'><div><span>AI Recruiter Hub</span></div><div class='contact-bar'><a href='mailto:support@ai-recruiter-hub.com'>support@ai-recruiter-hub.com</a> | <a href='tel:+1-800-555-0100'>+1 800 555 0100</a></div></div>", unsafe_allow_html=True)
+    st.markdown(
+        "<div class='brand-header'>"
+        "<span class='hub-title'>AI Hub</span> | <span class='recruiter-title'>Recruiter</span> | "
+        "<a href='mailto:ac570011@gmail.com'>ac570011@gmail.com</a> | <a href='tel:+919119652725'>+91 9119652725</a>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
 
     page = st.sidebar.radio(
         "Navigation",
