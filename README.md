@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 AI ATS Resume Screening & Recruitment Intelligence Platform
 
 A production-level recruitment platform powered by Machine Learning and Natural Language Processing (NLP) that revolutionizes how HR professionals and recruiters identify top talent.
@@ -411,3 +412,7 @@ Special thanks to:
 
 ⭐ If you find this project useful, please give it a star!
 
+=======
+# ai-ats-resume-screening
+Advanced AI ATS Resume Screening and Recruitment Analytics Platform with NLP, ML models, resume parsing, ATS scoring, and modern dashboard UI.
+>>>>>>> 78ad952dfc3e19d2735d25ebc84950ff325483ff
